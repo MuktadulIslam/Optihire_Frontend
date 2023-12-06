@@ -1,14 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Popup from "./pages/Popup";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Choo Choo! This is an example of a create-react-app site running on Railway.</p>
-        <a className="App-link" href="https://react.dev/learn" target="_blank" rel="noreferrer noopener">Learn React</a>
-      </header>
+    <div className='display-block bg-gray-100 min-h-screen w-full'>
+      <NavBar />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<Popup />} /> */}
+        </Routes>
+      </Router>
+      {/* <Footer /> */}
     </div>
   );
 }
